@@ -3,9 +3,9 @@ class HomeController < ApplicationController
 	end
 
 	def search
-		@result = User.find(params[:query])
-		if @result
-			puts @result.fname
+		user_id = params[:query]
+		unless User.where(id: params[:query].to_i).empty?
+			@result = User.find(user_id)
 		else
 			flash[:alert] = "There are no users with that ID"
 			redirect_to "/"
