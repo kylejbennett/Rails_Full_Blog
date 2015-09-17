@@ -1,2 +1,14 @@
 class UsersController < ApplicationController
+
+	def create
+		@user = User.new(params[:user])
+		if @user.save
+			flash[:notice] = "Your account has been created"
+			redirect_to user_path @user
+		else 
+			flash[:alert] = "There was a problem creating your account"
+			redirect_to new_user_path
+		end
+	end
+
 end
