@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user])
 		if @user.save
 			flash[:notice] = "Your account has been created"
+			session[:user_id] = @user.id
 			redirect_to user_path @user
 		else 
 			flash[:alert] = "There was a problem creating your account"
