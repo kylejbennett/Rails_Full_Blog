@@ -1,15 +1,19 @@
 <h1>New User Signup Page</h1>
 
-<%= form_for User.new do |f| %>
-	<%= f.label "Create Username" %><br>
-	<%= f.text_field :username %><br>
-	<%= f.label "First Name" %><br>
-	<%= f.text_field :fname %><br>
-	<%= f.label "Last Name" %><br>
-	<%= f.text_field :lname %><br>
-	<%= f.label "email" %><br>
-	<%= f.text_field :email %><br>
-	<%= f.label "password" %><br>
-	<%= f.text_field :fname %><br>
-	<%= f.submit :create %>
-<% end %>
+<div class="new_user">
+
+	<%= form_for User.new do |f| %>
+		<%= f.label "Create Username" %><br>
+		<%= f.text_field :username %><br>
+		<%= f.label "First Name" %><br>
+		<%= f.text_field :fname %><br>
+		<%= f.label "Last Name" %><br>
+		<%= f.text_field :lname %><br>
+		<%= f.label "email" %><br>
+		<%= f.text_field :email %><br>
+		<%= f.label "password" %><br>
+		<%= f.text_field :password %><br>
+		<%= f.submit :create %>
+	<% end %>
+
+</div>

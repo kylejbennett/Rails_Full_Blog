@@ -1,1 +1,10 @@
-<h1>User's Index Page</h1>
+<div class="all_users">
+
+	<h1>User's Index Page</h1>
+
+	<% @users.each do |user|%>
+		<hr>
+		<%= link_to user.username, user_path(user)%>
+	<% end %>
+
+</div>

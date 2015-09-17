@@ -1,1 +1,11 @@
 <h1>Home Page</h1>
+
+<div class="lookup">
+
+	<%= form_tag("/search", method: "get") do %>
+		<%= label_tag(:query, "Search User ID:") %><br>
+		<%= text_field_tag(:query) %><br>
+		<%= submit_tag("Submit") %>
+	<% end %>
+
+</div>
