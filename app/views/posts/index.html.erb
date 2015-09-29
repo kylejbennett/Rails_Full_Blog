@@ -1,18 +1,20 @@
 <div class="feed">
 
-	<h1>Post Feed Page</h1>
+	<%= inject_h1("Post Feed Page")%>
 
 	<% @posts.each do |post|%>
 		<hr>
 		<h2>
-			<%= post.title%><br>
+			<%= link_to post.title, post %><br>
 		</h2>
 		<p>
 			"<%= post.body%>"<br>	
 		</p>
+		<br>
 		<h4>
-			- <%= User.find(post.user_id).username%>
+			Posted by <%= link_to User.find(post.user_id).username, user_path(User.find(post.user_id)) %> - <%= time_ago_in_words(post.created_at) %> ago
 		</h4>
 	<% end %>
 
 </div>
+

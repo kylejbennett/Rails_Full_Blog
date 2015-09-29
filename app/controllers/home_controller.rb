@@ -3,7 +3,9 @@ class HomeController < ApplicationController
 	end
 
 	def search
+
 		user_id = params[:query]
+		@user = User.find(user_id)
 		unless User.where(id: params[:query].to_i).empty?
 			@result = User.find(user_id)
 		else

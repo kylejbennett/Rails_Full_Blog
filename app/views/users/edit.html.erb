@@ -1,1 +1,43 @@
 <h1>User Edit Account Page</h1>
+
+<div class="new_user">
+
+	<%= form_for @user, :html => { :multipart => true } do |f| %>
+		<p>
+			<%= f.label :username %><br>
+			<%= f.text_field :username %>
+		</p>
+
+		<p>
+			<%= f.label :fname %><br>
+			<%= f.text_field :fname %>
+		</p>
+
+		<p>
+			<%= f.label :lname %><br>
+			<%= f.text_field :lname %>
+		</p>
+
+		<p>
+			<%= f.label :email %><br>
+			<%= f.text_field :email %>
+		</p>
+
+		<p>
+			<%= f.label :password %><br>
+			<%= f.password_field :password %>
+		</p>
+
+		<p>
+			<%= f.label :avatar %><br>
+			<%= f.file_field :avatar %> 
+		</p>
+
+		<p>
+			<%= f.submit %>
+		</p>
+	<% end %>
+
+</div>
+
+
