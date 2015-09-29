@@ -18,19 +18,24 @@
 					<a href="/">Home</a>
 				</li>
 				<li>
+					<a href="/posts">Post Feed</a>
+				</li>
+				<li>
 					<a href="/users">Users</a>
 				</li>
 				<li>
-					<a href="/users/id">My Account</a>
+					<% if current_user %>
+						<%= link_to 'My Account', user_path(current_user) %>
+					<% end %>
 				</li>
 				<li>
-					<a href="/users/new">Sign In</a>
+					<a href="/users/new">Sign Up</a>
 				</li>
 				<li>
-					<a href="#">Sign Out</a>
+					<%= link_to 'Sign In', login_path %>
 				</li>
 				<li>
-					<a href="/posts">Post Feed</a>
+					<%= link_to 'Sign Out', sessions_path, method: :delete %>
 				</li>
 				<li>
 					<a href="/posts/new">Create Post</a>
@@ -42,10 +47,26 @@
 
 	</header>
 
-	<%= flash[:notice] if flash[:notice] %>
-	<%= flash[:alert] if flash[:alert] %>
+	<div class="load">
+		<img src="loading.gif">
+	</div>
 
-<%= yield %>
+	<div class="content">
+		<% if flash[:notice] %>
+			<div class="notice">
+				<%= flash[:notice] %>
+			</div>
+		<% end %>
+		
+		<% if flash[:alert] %>
+			<div class="alert">
+				<%= flash[:alert] %>
+			</div>
+		<% end %>
+
+		<%= yield %>
+
+	</div>
 
 </body>
 </html>

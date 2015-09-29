@@ -4,7 +4,13 @@
 
 	<% @users.each do |user|%>
 		<hr>
-		<%= link_to user.username, user_path(user)%>
+		<p>
+			<%= link_to user.username, user_path(user)%>
+		</p>
+	
+			<%= image_tag user.avatar.url(:thumb) %>
+	
 	<% end %>
+	<br>
 
 </div>

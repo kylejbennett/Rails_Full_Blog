@@ -34,6 +34,7 @@ h5{
 
 h1{
 	text-align: center;
+	text-align: top;
 }
 
 nav ul{
@@ -41,17 +42,71 @@ nav ul{
 	font-size: 15pt;
 }
 
+.load{
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	top: 0;
+	left: 315px;
+}
+
+.content{
+	width: 1010px;
+	margin: 0 auto;
+	background-color: #99F08F;
+	border-radius: 12px;
+	padding: 20px;
+	padding-bottom: 40px;
+}
+
+.notice{
+	width: 800px;
+	height: 50px;
+	margin: 0 auto;
+	border: 1px solid blue;
+	background-color: #7EE8F0;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 18pt;
+	padding-top: 25px;
+}
+
+.alert{
+	width: 800px;
+	height: 50px;
+	margin: 0 auto;
+	border: 1px solid red;
+	background-color: #F06873;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 18pt;
+	padding-top: 25px;
+}
+
 /*################# Home ###################*/
 
-.lookup{
-	padding-top: 50px;
+
+
+.home{
 	text-align: center;
 }
 
-.lookup input{
-	height: 25px;
-	border-radius: 5px;
-	margin-bottom: 20px;
+.home button{
+	font-family: "Maven Pro", sans-serif;
+	font-size: 12pt;
+	height: 36px;
+	border: 2px solid black;
+	border-radius: 8px;
+	background: none;
+}
+
+.home button a{
+	text-decoration: none;
+	color: black;
+}
+
+.home button:hover{
+	background-color: #AFAAF0;
 }
 
 
@@ -68,6 +123,11 @@ nav ul{
 .all_users{
 	width: 900px;
 	margin: 0 auto;
+	text-align: center;
+}
+
+.all_users p{
+	font-size: 20px;
 }
 
 /*############# New User ###############*/
@@ -82,6 +142,18 @@ nav ul{
 	border-radius: 5px;
 }
 
+/*############# Log In ##################*/
+
+.new_session{
+	text-align: center;
+}
+
+.new_session input{
+	height: 25px;
+	width: 300px;
+	border-radius: 5px;
+}
+
 /*########### Post Feed #############*/
 
 .feed{
@@ -89,8 +161,25 @@ nav ul{
 	margin: 0 auto;
 }
 
+.feed h1{
+	text-align: left;
+}
+
+.feed h2{
+	text-align: center;
+}
+
 .feed p{
-	margin-left: 32px;
+		color: #1774F0;
+}
+
+.feed p, h4{
+	width: 600px;
+	margin: 0 auto;
+}
+
+hr{
+	border-color: black;
 }
 
 /*############# New Post ###############*/
@@ -100,8 +189,8 @@ nav ul{
 }
 
 #post_body{
-	height: 200px;
-	width: 300px;
+	height: 150px;
+	width: 500px;
 	border-radius: 5px;
 }
 
@@ -109,4 +198,23 @@ nav ul{
 	height: 25px;
 	width: 300px;
 	border-radius: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
+
+/*############## Show ################*/
+
+.show{
+	margin-top: 50px;
+	text-align: center;
+}
+
+/*############# Edit User ###############*/
+
+
+
+
+
+
+
+
