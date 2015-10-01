@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		if current_user
+			@user = User.find(current_user[:id])
+		end
 	end
 
 	def show
@@ -38,7 +41,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			flash[:notice] = "Account updated"
+			flash[:notice] = "Account updated!"
 			redirect_to @user
 		else
 			render 'edit'
@@ -46,8 +49,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
+		@user = User.find(current_user.id)
 		@user.destroy
-		session[:user_id] = nil if @user == current_user
+		session[:user_id] = nil
 		flash[:alert] = "You're account has been deleted"
 		redirect_to users_path
 	end
