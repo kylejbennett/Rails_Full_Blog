@@ -24,11 +24,6 @@
 		</p>
 
 		<p>
-			<%= f.label :password %><br>
-			<%= f.password_field :password %>
-		</p>
-
-		<p>
 			<%= f.label :avatar %><br>
 			<%= f.file_field :avatar %> 
 		</p>
@@ -36,7 +31,16 @@
 		<p>
 			<%= f.submit %>
 		</p>
+
 	<% end %>
+
+	<span>
+		<%=link_to "Delete My Account", '/users/:id', method: :delete %>
+	</span>
+
+	<span>
+		<%=link_to "Delete My Account", '/users/password', method: :get %>
+	</span>
 
 </div>
 

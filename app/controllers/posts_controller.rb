@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
 
 	def index
+		if current_user
+			@user = User.find(current_user[:id])
+		end
 		@posts = Post.all.order('created_at DESC')
 	end
 
@@ -10,7 +13,7 @@ class PostsController < ApplicationController
 
 	def new
 		if current_user
-
+			@user = User.find(current_user[:id])
 		else
 			flash[:notice] = "Please login or sign up"
 			redirect_to login_path
@@ -20,6 +23,12 @@ class PostsController < ApplicationController
 
 	def edit
 
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		render posts_path
 	end
 
 	def create

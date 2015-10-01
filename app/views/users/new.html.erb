@@ -14,7 +14,7 @@
 		<%= f.label "password" %><br>
 		<%= f.password_field :password %><br>
 		<br>
-		<%= f.submit :create %>
+		<%= f.submit :create, data: {disable_with: "Submitting..."} %>
 	<% end %>
 
 	
