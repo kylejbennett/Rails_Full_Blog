@@ -4,8 +4,4 @@ module HomeHelper
 		"Hello"
 	end
 
-	def full_name
-		@result.fname + ' ' + @result.lname
-	end
-
 end

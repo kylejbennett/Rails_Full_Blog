@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$(event.currentTarget).parent().slideUp(2000) 
 	});
 
-})
+});
 
 $(document).on('page:load', function(event) {
 
@@ -28,6 +28,8 @@ $(document).on('page:load', function(event) {
 	console.log("Ready")
 
 });
+
+
 
 	
 
