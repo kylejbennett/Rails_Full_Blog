@@ -1,24 +1,43 @@
 <div class="feed">
 
-	<%= inject_h1("Post Feed Page")%>
+	<%= inject_h1("Post Feed")%>
 
-	<% @posts.each do |post|%>
-		<div>
-			<hr>
-			<h2>
-				<%= link_to post.title, post %><br>
-			</h2>
-			<p>
-				"<%= post.body%>"<br>	
-			</p>
-			<br>
-			<h4>
-				Posted by 
-				<%= link_to User.find(post.user_id).username, user_path(User.find(post.user_id)) %> - <%= time_ago_in_words(post.created_at) %> 
-				ago
-			</h4>
-			<%=link_to "Delete", post_path(post), method: :delete, remote: true, class: "delete-post" %>	
-		</div>
-	<% end %>
+	<div class="post">
+
+		<% @posts.each do |post|%>
+			<div>
+				<hr>
+				<h2>
+					<% if current_user %>
+						<%= link_to post.title, post %><br>
+					<% else %>
+						<%= post.title %>
+					<% end %>
+				</h2>
+				<p>
+					"<%= post.body%>"<br>	
+				</p>
+				<br>
+				<h4>
+					Posted by: 
+					<br>
+					<% if User.find(post.user_id).avatar != nil %>
+						<%= image_tag User.find(post.user_id).avatar.url(:thumb) %>
+						<br>
+					<% end %>
+					<%= link_to User.find(post.user_id).username, user_path(User.find(post.user_id)) %> - <%= time_ago_in_words(post.created_at) %>
+					ago
+					<br>
+					<%= post.comments.count %> Comments
+					<br>
+					<br>
+					<% if current_user == User.find(post.user_id)%>
+						<%=link_to "- Delete this Post", post_path(post), method: :delete, remote: true, class: "delete-post" %>
+					<% end %>
+				</h4>
+					
+			</div>
+		<% end %>
+	</div>
 </div>
 
