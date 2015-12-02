@@ -1,4 +1,4 @@
-== README
+== Rails Full Blog
 
 This is a blogging app built in Ruby on Rails.
 
